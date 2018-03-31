@@ -2,7 +2,9 @@
 #
 # Table name: recipe_ingredients
 #
-#  id :integer          not null, primary key
+#  id            :integer          not null, primary key
+#  recipe_id     :integer
+#  ingredient_id :integer
 #
 
 class RecipeIngredient < ApplicationRecord
