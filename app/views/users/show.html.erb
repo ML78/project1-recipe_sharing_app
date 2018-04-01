@@ -1,8 +1,23 @@
 <h1><%= "#{@user.name}'s Page" %></h1>
 
 <% unless @user.image.empty? %>
-  <%= image_tag @user.image, :alt => @user.name %>
+  <%= image_tag @user.image, :alt => @user.name, :class => 'thumb'%>
 <% end %>
+
+<p><%= link_to "Add a new recipe", new_recipe_path %> </p>
+
+<% unless @user.recipes.empty? %>
+  <h2>Recipes</h2>
+  <% @user.recipes.each do |recipe| %>
+    <ul>
+      <li>
+        <%= link_to recipe.title, recipe %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+
+<hr>
 
 <div class="controls">
   <%= link_to 'Edit member', edit_user_path(@user) %>

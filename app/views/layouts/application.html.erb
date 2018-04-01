@@ -12,6 +12,9 @@
     <div>
       <nav>
         <%= link_to 'Home', root_path %>
+        <%= link_to 'Recipes', recipes_path %>
+        <%= link_to 'Ingredients', ingredients_path %>
+
         <% if @current_user.present? %>
           <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
         <% else %>

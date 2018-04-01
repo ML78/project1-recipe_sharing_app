@@ -1,0 +1,11 @@
+<h1>Add Ingredient</h1>
+
+<% if @ingredient.errors.any? %>
+  <ol>
+    <% @ingredient.errors.full_messages.each do |msg| %>
+      <li><%= msg.capitalize %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= render :partial => 'form' %>

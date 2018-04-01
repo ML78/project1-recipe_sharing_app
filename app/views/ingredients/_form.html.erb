@@ -1,0 +1,6 @@
+<%= form_for @ingredient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %>
+
+  <%= f.submit(@ingredient.new_record? ? "Create ingredient" : "Edit ingredient") %>
+<% end %>
