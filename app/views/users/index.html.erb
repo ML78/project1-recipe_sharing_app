@@ -1,3 +1,5 @@
 <h1>Members</h1>
 
-<p>coming soon</p>
+<% @users.each do |user| %>
+  <h3> <%= link_to user.name, user %> </h3>
+<% end %>
