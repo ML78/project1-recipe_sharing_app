@@ -10,20 +10,11 @@
 
   <body>
     <div>
-      <nav>
-        <%= link_to 'Home', root_path %>
-        <%= link_to 'Recipes', recipes_path %>
-        <%= link_to 'Ingredients', ingredients_path %>
-        <%= link_to 'Categories', categories_path %>
-
-        <% if @current_user.present? %>
-          <%= link_to "Sign out #{ @current_user.email }", login_path, :method => 'delete' %>
-        <% else %>
-          <%= link_to 'Sign Up', new_user_path %>
-          <%= link_to 'Sign In', login_path %>
-        <% end %>
-      </nav>
-      <%= yield %>
+      <%= render 'layouts/navigation' %>
+        <div class="container">
+          <%= yield %>
+        </div>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <h1><%= "#{@user.name}'s Page" %></h1>
 
 <% unless @user.image.empty? %>
-  <%= image_tag @user.image, :alt => @user.name, :class => 'thumb'%>
+  <%= image_tag @user.image, :alt => @user.name, :class => 'thumbnail' %>
 <% end %>
 
 <p><%= link_to "Add a new recipe", new_recipe_path %> </p>

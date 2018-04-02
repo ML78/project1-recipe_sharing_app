@@ -1,0 +1,81 @@
+$navbar-default-bg: rgba(98, 123, 238, 0.9);
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#nav-home {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+}
+
+#nav-home:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+#nav-categories {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+#nav-recipes {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+#nav-ingredients {
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+#sign-up {
+  background-color: rgba(255, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  border: solid 1px rgba(255, 0, 0, 1);
+}
+
+#sign-in {
+  background-color: rgba(162, 249, 208, 1);
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  border: solid 1px rgba(255, 255, 255, 1);
+}
+
+#sign-out {
+  background-color: rgba(255, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('cover-img.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h1 {
+  color: rgba(255,99,71,1);
+  font-weight: bold;
+}
+
+.jumbotron h3 {
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+.footer {
+  background-color: rgba(128, 197, 220, 1);
+  color: #ffffff;
+  font-size: 14px;
+  line-height: .08em;
+  font-weight: 500;
+  padding: 20px;
+}
+
+.thumbnail {
+    max-height: 10em;
+}
