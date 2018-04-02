@@ -1,0 +1,10 @@
+<%= form_for @category do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true %>
+
+  <%= f.label :image, "Image url" %>
+  <%= f.url_field :image %>
+
+  <%= f.submit(@category.new_record? ? "Create category" : "Update category") %>
+
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Create a category</h1>
+
+<% if @category.errors.any? %>
+  <ol>
+    <% @recipe.errors.full_messages.each do |msg| %>
+      <li><%= msg.capitalize %></li>
+    <% end %>
+  </ol>
+<% end %>
+
+<%= render :partial => 'form' %>

@@ -8,7 +8,7 @@
   <%= f.label :image, "Image url" %>
   <%= f.url_field :image %>
 
-  <%= f.label :user_id, "Created by" %>
+  <%= f.label :user_id, "Posted by" %>
   <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
 
   <%= f.submit(@recipe.new_record? ? "Create recipe" : "Update recipe") %>
