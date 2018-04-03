@@ -4,27 +4,40 @@
 
   <%= f.text_field :title, :autofocus => true %>
 
-
+  <br>
   <%= f.label :description, "Instructions" %>
 
 
   <%= f.text_field :description %>
 
+  <br>
 
   <%= f.label :image, "Image url" %>
 
   <%= f.url_field :image %>
 
-  <%= f.label :category_ids, "Category" %>
+  <br>
 
-  <%= f.select :category_ids, Category.pluck(:title, :id), :include_blank => true %>
+  <%= f.label :category_ids, "Categories" %>
+
+  <%= f.collection_check_boxes :category_ids, Category.all, :id, :title do |checkbox| %>
+  <% checkbox.label {checkbox.check_box + checkbox.text} %>
+  <% end %>
+
+<br>
+
+  <%= f.label :ingredient_ids, "Ingredients" %>
 
   <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |checkbox| %>
   <% checkbox.label {checkbox.check_box + checkbox.text} %>
   <% end %>
 
+<br>
+
   <%= f.label :user_id, "Posted by" %>
   <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
+
+  <br>
 
   <%= f.submit(@recipe.new_record? ? "Create recipe" : "Update recipe" , :class => "btn btn-success") %>
 

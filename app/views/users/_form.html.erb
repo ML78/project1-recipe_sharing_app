@@ -7,29 +7,35 @@
   <%= f.text_field :name, :autofocus => true %>
 
 
+<br>
+
   <%= f.label :email%>
 
 
   <%= f.email_field :email, :required => true %>
 
+<br>
 
   <%= f.label :password %>
 
 
   <%= f.password_field :password %>
 
+<br>
 
   <%= f.label :password_confirmation %>
 
 
   <%= f.password_field :password_confirmation %>
 
+<br>
 
   <%= f.label :image, "Image url"%>
 
 
   <%= f.url_field :image %>
 
+<br>
 
   <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", :class => "btn btn-danger") %>
 

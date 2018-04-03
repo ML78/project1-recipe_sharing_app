@@ -4,16 +4,16 @@
 
 <%= link_to image_tag(@recipe.image, :alt => @recipe.title, :class => 'thumbnail'), @recipe.image %>
 
+<% if @recipe.ingredients.any? %>
+    <p>Ingredients: <%= render @recipe.ingredients %></p>
+<% end %>
+
 <h2>Instructions: </h2>
 
 <%= @recipe.description %>
 
 <% if @recipe.categories.any? %>
-  <p>Category: <%= link_to @recipe.categories.first.title %> </p>
-<% end %>
-
-<% if @recipe.ingredients.any? %>
-  <p>Ingredients: <%= link_to @recipe.ingredients.first.name %> </p>
+  <p>See more: <%= render @recipe.categories %></p>
 <% end %>
 
 <hr>
