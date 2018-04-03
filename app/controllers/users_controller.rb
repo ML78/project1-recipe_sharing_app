@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+
   def index
     @users = User.all
   end
@@ -38,8 +41,16 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :image, :email, :password, :password_confirmation)
+  end
+
+  def require_same_user
+    user = User.find(params[:id])
+    if current_user != user
+      redirect_to users_path
+    end
   end
 
 end
