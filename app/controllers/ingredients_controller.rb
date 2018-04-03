@@ -1,7 +1,6 @@
 class IngredientsController < ApplicationController
 
   before_action :require_user, except: [:index, :show]
-  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
     @ingredients = Ingredient.all
@@ -46,11 +45,6 @@ class IngredientsController < ApplicationController
     params.require(:ingredient).permit(:name, recipe_ids: [])
   end
 
-  def require_same_user
-    recipe = Recipe.find params[:id]
-    if current_user != recipe.user
-      redirect_to recipes_path
-    end
-  end
+
 
 end
