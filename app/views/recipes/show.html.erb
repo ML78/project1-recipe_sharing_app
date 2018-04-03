@@ -8,10 +8,17 @@
 
 <%= @recipe.description %>
 
+<% if @recipe.categories.any? %>
+  <p>Category: <%= link_to @recipe.categories.first.title %> </p>
+<% end %>
+
+<% if @recipe.ingredients.any? %>
+  <p>Ingredients: <%= link_to @recipe.ingredients.first.name %> </p>
+<% end %>
+
 <hr>
 
 <p>Posted by: <%= @recipe.user.name %> </p>
-
 
 </div>
 

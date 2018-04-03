@@ -1,15 +1,31 @@
 <%= form_for @recipe do |f| %>
+
   <%= f.label :title %>
+
   <%= f.text_field :title, :autofocus => true %>
 
-  <%= f.label :description, "Instructions"%>
+
+  <%= f.label :description, "Instructions" %>
+
+
   <%= f.text_field :description %>
 
+
   <%= f.label :image, "Image url" %>
+
   <%= f.url_field :image %>
+
+  <%= f.label :category_ids, "Category" %>
+
+  <%= f.select :category_ids, Category.pluck(:title, :id), :include_blank => true %>
+
+  <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |checkbox| %>
+  <% checkbox.label {checkbox.check_box + checkbox.text} %>
+  <% end %>
 
   <%= f.label :user_id, "Posted by" %>
   <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
 
-  <%= f.submit(@recipe.new_record? ? "Create recipe" : "Update recipe") %>
+  <%= f.submit(@recipe.new_record? ? "Create recipe" : "Update recipe" , :class => "btn btn-success") %>
+
 <% end %>

@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:title, :image, :recipe_id)
+    params.require(:category).permit(:title, :image, recipe_ids: [])
   end
 
 end
