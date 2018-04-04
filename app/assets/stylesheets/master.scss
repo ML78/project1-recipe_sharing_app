@@ -3,6 +3,34 @@ $navbar-default-bg: rgba(98, 123, 238, 0.9);
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('cover-img.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbotron h1 {
+  color: rgba(255,99,71,1);
+  font-weight: bold;
+}
+
+.jumbotron h3 {
+  color: rgba(0, 0, 0, 1);
+  font-weight: bold;
+}
+
+.thumbnail {
+  max-height: 20em;
+}
+
+.badge {
+  background-color: rgba(255,140,0,1);
+}
+
 #nav-home {
   color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
@@ -12,17 +40,7 @@ $navbar-default-bg: rgba(98, 123, 238, 0.9);
   color: rgba(255, 255, 255, 1);
 }
 
-#nav-categories {
-  color: rgba(255, 255, 255, 1);
-  font-weight: bold;
-}
-
-#nav-recipes {
-  color: rgba(255, 255, 255, 1);
-  font-weight: bold;
-}
-
-#nav-ingredients {
+#nav-links {
   color: rgba(255, 255, 255, 1);
   font-weight: bold;
 }
@@ -47,35 +65,6 @@ $navbar-default-bg: rgba(98, 123, 238, 0.9);
   font-weight: bold;
 }
 
-.center {
-  text-align: center;
-}
-
-.jumbotron {
-  background-image: asset-url('cover-img.jpg');
-  background-size: cover;
-  height: 500px;
-}
-
-.jumbotron h1 {
-  color: rgba(255,99,71,1);
-  font-weight: bold;
-}
-
-.jumbotron h3 {
-  color: rgba(0, 0, 0, 1);
-  font-weight: bold;
-}
-
-.footer {
-  background-color: rgba(128, 197, 220, 1);
-  color: #ffffff;
-  font-size: 14px;
-  line-height: .08em;
-  font-weight: 500;
-  padding: 20px;
-}
-
-.thumbnail {
-    max-height: 10em;
+#footer {
+  background-color: rgba(0, 0, 0, 1);
 }

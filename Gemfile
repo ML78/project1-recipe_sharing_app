@@ -34,6 +34,7 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass', '~> 3.3.7'
 
+gem 'cloudinary'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
