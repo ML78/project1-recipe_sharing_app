@@ -40,19 +40,16 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     redirect_to recipes_path
   end
 
-
   private
-
   def recipe_params
     params.require(:recipe).permit(:title, :description, :image, :user_id, category_ids: [], ingredient_ids: [])
   end
 
   def require_same_user
     recipe = Recipe.find params[:id]
-    if current_user != recipe.user
+    if current_user != recipe.user and !current_user.admin?
       redirect_to recipes_path
     end
   end
-
 
 end

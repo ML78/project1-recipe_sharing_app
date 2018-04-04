@@ -1,44 +1,59 @@
 <%= form_for @recipe do |f| %>
 
+  <fieldset class="form-group">
+
   <%= f.label :title %>
 
-  <%= f.text_field :title, :autofocus => true %>
+  <%= f.text_field :title, :autofocus => true, :class => "form-control"  %>
 
-  <br>
+  </fieldset>
+  <fieldset class="form-group">
   <%= f.label :description, "Recipe description" %>
 
 
-  <%= f.text_field :description %>
+  <%= f.text_field :description, :class => "form-control"  %>
 
-  <br>
+  </fieldset>
+  <fieldset class="form-group">
 
   <%= f.label :image, "Image url" %>
 
-  <%= f.url_field :image %>
+  <%= f.url_field :image, :class => "form-control"  %>
 
-  <br>
+  </fieldset>
+  <fieldset class="form-group">
 
   <%= f.label :category_ids, "Categories" %>
+
+  <br>
 
   <%= f.collection_check_boxes :category_ids, Category.all, :id, :title do |checkbox| %>
   <% checkbox.label {checkbox.check_box + checkbox.text} %>
   <% end %>
 
-<br>
+</fieldset>
+<fieldset class="form-group">
 
   <%= f.label :ingredient_ids, "Main ingredients" %>
+
+  <br>
 
   <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |checkbox| %>
   <% checkbox.label {checkbox.check_box + checkbox.text} %>
   <% end %>
 
-<br>
+</fieldset>
+<fieldset class="form-group">
 
   <%= f.label :user_id, "Posted by" %>
   <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
 
-  <br>
+</fieldset>
+
+  <fieldset class="form-group">
+    <label></label>
 
   <%= f.submit(@recipe.new_record? ? "Create recipe" : "Update recipe" , :class => "btn btn-success") %>
+  </fieldset>
 
 <% end %>

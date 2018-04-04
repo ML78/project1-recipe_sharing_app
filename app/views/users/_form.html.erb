@@ -1,44 +1,52 @@
   <%= form_for @user do |f| %>
 
+  <fieldset class="form-group">
 
-  <%= f.label :name, "Username" %>
+    <%= f.label :name, "Username" %>
 
+    <%= f.text_field :name, :autofocus => true, :class => "form-control" %>
 
-  <%= f.text_field :name, :autofocus => true %>
+  </fieldset>
 
+  <fieldset class="form-group">
 
-<br>
+    <%= f.label :email%>
 
-  <%= f.label :email%>
+    <%= f.email_field :email, :required => true, :class => "form-control" %>
 
+  </fieldset>
 
-  <%= f.email_field :email, :required => true %>
+  <fieldset class="form-group">
 
-<br>
+    <%= f.label :password %>
 
-  <%= f.label :password %>
+    <%= f.password_field :password, :class => "form-control" %>
 
+  </fieldset>
 
-  <%= f.password_field :password %>
+  <fieldset class="form-group">
 
-<br>
+    <%= f.label :password_confirmation %>
 
-  <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :class => "form-control" %>
 
+  </fieldset>
 
-  <%= f.password_field :password_confirmation %>
+  <fieldset class="form-group">
 
-<br>
+    <%= f.label :image, "Image url"%>
 
-  <%= f.label :image, "Image url"%>
+    <%= f.url_field :image, :class => "form-control" %>
 
+  </fieldset>
 
-  <%= f.url_field :image %>
+  <fieldset class="form-group">
 
-<br>
+    <label></label>
 
-  <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", :class => "btn btn-danger") %>
+    <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", :class => "btn btn-danger") %>
 
+  </fieldset>
 
 <% end %>
 

@@ -1,6 +1,7 @@
 class IngredientsController < ApplicationController
 
   before_action :require_user, except: [:index, :show]
+  before_action :require_admin, only: [:edit, :update, :destroy]
 
   def index
     @ingredients = Ingredient.all
@@ -40,11 +41,8 @@ class IngredientsController < ApplicationController
   end
 
   private
-
   def ingredient_params
     params.require(:ingredient).permit(:name, recipe_ids: [])
   end
-
-
 
 end
