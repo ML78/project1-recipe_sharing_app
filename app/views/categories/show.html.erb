@@ -1,19 +1,21 @@
 <h1> <%= @category.title.capitalize %> </h1>
 
-<%= link_to image_tag(@category.image, :alt => @category.title, :class => 'thumbnail'), @category.image %>
+<div>
+  <%= link_to image_tag(@category.image, :alt => @category.title, :class => 'thumbnail'), @category.image %>
 
-<% if @category.recipes.count !=0 %>
-  <h2>Recipes</h2>
-    <% @category.recipes.each do |recipe| %>
-      <ul>
-        <li>
-          <%= link_to recipe.title, recipe %>
-        </li>
-      </ul>
-    <% end %>
-    <% else %>
-    <p>No recipes have been added</p>
+  <% if @category.recipes.count !=0 %>
+    <h2>Recipes</h2>
+      <% @category.recipes.each do |recipe| %>
+        <ul>
+          <li>
+            <%= link_to recipe.title, recipe %>
+          </li>
+        </ul>
+      <% end %>
+      <% else %>
+      <p>No recipes have been added</p>
   <% end %>
+</div>
 
 <div class="controls">
   <% if @current_user.present? && @current_user.admin %>

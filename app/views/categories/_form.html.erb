@@ -1,18 +1,16 @@
+<!-- Form partial to add/edit a category  -->
+
 <%= form_for @category, :html => { :multipart => true } do |f| %>
-
-<fieldset class="form-group">
-  <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
-</fieldset>
-
-<fieldset class="form-group">
-  <%= f.label :image %><br>
-  <%= f.file_field :image %>
-</fieldset>
-
-<fieldset>
-  <label></label>
-  <%= f.submit(@category.new_record? ? "Create category" : "Update category") %>
-</fieldset>
-
+  <fieldset class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :autofocus => true, :class => "form-control" %>
+  </fieldset>
+  <fieldset class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </fieldset>
+  <fieldset>
+    <label></label>
+    <%= f.submit(@category.new_record? ? "Create category" : "Update category") %>
+  </fieldset>
 <% end %>

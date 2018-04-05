@@ -18,5 +18,6 @@ class Recipe < ApplicationRecord
   has_many :ingredients, through: :recipe_ingredients
 
   validates :title, :presence => true
+  validates :description, :presence => true
   validates :image, :presence => true
 end

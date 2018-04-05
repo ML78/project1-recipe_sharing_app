@@ -1,11 +1,16 @@
 <h1>Sign up</h1>
 
-<% if @user.errors.any? %>
-  <ol>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg.capitalize %></li>
-    <% end %>
-  </ol>
-<% end %>
+<!-- error handling -->
+<div>
+  <% if @user.errors.any? %>
+    <ol>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg.capitalize %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-<%= render :partial => 'form' %>
+<div>
+  <%= render :partial => 'form' %>
+</div>

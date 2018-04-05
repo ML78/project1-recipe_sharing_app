@@ -23,6 +23,7 @@ class IngredientsController < ApplicationController
   def show
     @ingredient = Ingredient.find(params[:id])
 
+    #per wikipedia-client gem docs - must require 'wikipedia' to avoid errors with API
     require 'wikipedia'
     @page = Wikipedia.find(@ingredient.name)
   end

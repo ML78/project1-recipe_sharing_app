@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
 
 before_action :require_user, except: [:index, :show]
-before_action :require_same_user, only: [:edit, :update, :destroy]
+before_action :require_same_user, only: [:edit, :update, :destroy] #cannot delete another user's account
 
   def index
     @recipes = Recipe.all

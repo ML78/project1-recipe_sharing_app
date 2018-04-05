@@ -1,14 +1,19 @@
 <h1>Create a category</h1>
 
-<% if @category.errors.any? %>
-  <ol>
-    <% @category.errors.full_messages.each do |msg| %>
-      <li><%= msg.capitalize %></li>
-    <% end %>
-  </ol>
-<% end %>
+<!-- error handling -->
+<div>
+  <% if @category.errors.any? %>
+    <ol>
+      <% @category.errors.full_messages.each do |msg| %>
+        <li><%= msg.capitalize %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-<%= render :partial => 'form' %>
+<div>
+  <%= render :partial => 'form' %>
+</div>
 
 <div>
   [ <%= link_to 'Go back to categories listing', categories_path %> ]

@@ -1,14 +1,19 @@
 <h1>Add Ingredient</h1>
 
-<% if @ingredient.errors.any? %>
-  <ol>
-    <% @ingredient.errors.full_messages.each do |msg| %>
-      <li><%= msg.capitalize %></li>
-    <% end %>
-  </ol>
-<% end %>
+<!-- error handling -->
+<div>
+  <% if @ingredient.errors.any? %>
+    <ol>
+      <% @ingredient.errors.full_messages.each do |msg| %>
+        <li><%= msg.capitalize %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-<%= render :partial => 'form' %>
+<div>
+  <%= render :partial => 'form' %>
+</div>
 
 <div>
   [ <%= link_to 'Go back to ingredients listing', ingredients_path %> ]

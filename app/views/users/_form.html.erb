@@ -1,53 +1,28 @@
-  <%= form_for @user, :html => { :multipart => true } do |f| %>
+<!-- Form partial for new user sign-up & to edit user -->
 
+<%= form_for @user, :html => { :multipart => true } do |f| %>
   <fieldset class="form-group">
-
     <%= f.label :name, "Username" %>
-
     <%= f.text_field :name, :autofocus => true, :class => "form-control" %>
-
   </fieldset>
-
   <fieldset class="form-group">
-
     <%= f.label :email%>
-
     <%= f.email_field :email, :required => true, :class => "form-control" %>
-
   </fieldset>
-
   <fieldset class="form-group">
-
     <%= f.label :password %>
-
     <%= f.password_field :password, :class => "form-control" %>
-
   </fieldset>
-
   <fieldset class="form-group">
-
     <%= f.label :password_confirmation %>
-
     <%= f.password_field :password_confirmation, :class => "form-control" %>
-
   </fieldset>
-
   <fieldset class="form-group">
-
     <%= f.label :image %><br>
-
-      <%= f.file_field :image %>
-
+    <%= f.file_field :image %>
   </fieldset>
-
   <fieldset class="form-group">
-
     <label></label>
-
-    <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", :class => "btn btn-danger") %>
-
+      <%= f.submit(@user.new_record? ? "Sign up" : "Update profile", :class => "btn btn-danger") %>
   </fieldset>
-
 <% end %>
-
-</form>

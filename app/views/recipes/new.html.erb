@@ -1,15 +1,19 @@
 <h1>Create a recipe</h1>
 
-<% if @recipe.errors.any? %>
-  <ol>
-    <% @recipe.errors.full_messages.each do |msg| %>
-      <li><%= msg.capitalize %></li>
-    <% end %>
-  </ol>
-<% end %>
+<!-- error handling -->
+<div>
+  <% if @recipe.errors.any? %>
+    <ol>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg.capitalize %></li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
-<%= render :partial => 'form' %>
-
+<div>
+  <%= render :partial => 'form' %>
+</div>
 
 <div>
   [ <%= link_to 'Go back to recipes', recipes_path %> ]
