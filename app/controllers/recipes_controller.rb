@@ -58,6 +58,4 @@ before_action :require_same_user, only: [:edit, :update, :destroy] #cannot delet
     end
   end
 
-
-
 end

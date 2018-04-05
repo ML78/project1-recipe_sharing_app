@@ -30,5 +30,8 @@
   <h2>About <%= @ingredient.name %> </h2>
     <p><%= @page.summary %></p>
     <br>
-    <p>Source: <a href="<%=@page.fullurl%>" target="_blank"><%=@page.fullurl%></a></p>
+
+<!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" Find out more about this ingredient>Find out more about this ingredient</button> -->
+
+    <p data-toggle="tooltip" data-placement="left" title="Find out more!">Source: <a href="<%=@page.fullurl%>" target="_blank"><%=@page.fullurl%></a></p>
 </div>
