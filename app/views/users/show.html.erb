@@ -5,7 +5,9 @@
     <%= image_tag @user.image, :alt => @user.name, :class => 'thumbnail' %>
   <% end %>
 
+  <% if @current_user.present? %>
   <p><%= link_to "Add a new recipe", new_recipe_path %> </p>
+  <% end %>
 
   <% unless @user.recipes.empty? %>
     <h2>Recipes</h2>

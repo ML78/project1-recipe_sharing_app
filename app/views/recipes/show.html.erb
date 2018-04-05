@@ -2,7 +2,9 @@
 
 <div>
 
-<%= link_to image_tag(@recipe.image, :alt => @recipe.title, :class => 'thumbnail'), @recipe.image %>
+<% unless @recipe.image.empty? %>
+  <%= link_to image_tag(@recipe.image, :alt => @recipe.title, :class => 'thumbnail'), @recipe.image %>
+<% end %>
 
 <% if @recipe.ingredients.any? %>
     <p>Ingredients: <%= render @recipe.ingredients%></p>

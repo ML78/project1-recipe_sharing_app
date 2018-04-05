@@ -1,7 +1,10 @@
 <h1> <%= @category.title.capitalize %> </h1>
 
 <div>
-  <%= link_to image_tag(@category.image, :alt => @category.title, :class => 'thumbnail'), @category.image %>
+
+  <% unless @category.image.empty? %>
+    <%= link_to image_tag(@category.image, :alt => @category.title, :class => 'thumbnail'), @category.image %>
+  <% end %>
 
   <% if @category.recipes.count !=0 %>
     <h2>Recipes</h2>
