@@ -13,6 +13,10 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def create
     @recipe = Recipe.new recipe_params
+
+    @cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
+    @recipe.update :image => @cloudinary['url']
+
     if @recipe.save
       redirect_to @recipe
     else
@@ -51,5 +55,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
       redirect_to recipes_path
     end
   end
+
+
 
 end

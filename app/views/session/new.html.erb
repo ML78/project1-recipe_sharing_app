@@ -3,19 +3,20 @@
 <h2><%= flash[:error] %></h2>
 
 <%= form_tag login_path do %>
-  <%= label_tag :name %>
-  <%= text_field_tag :name %>
 
-  <%= label_tag :email %>
-  <%= email_field_tag :email %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+    <%= label_tag :email %>
+    <%= email_field_tag :email %>
 
-  <%= submit_tag "Sign in" %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag "Sign in" %>
+
 <% end %>
 
-
 <div>
-  [ <%= link_to "Sign up if you don't have an account yet", new_user_path %>]
+  [ <%= link_to "Sign up if you don't have an account yet", new_user_path %> ]
 </div>

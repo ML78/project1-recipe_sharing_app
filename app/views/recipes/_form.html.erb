@@ -1,4 +1,4 @@
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, :html => { :multipart => true } do |f| %>
 
   <fieldset class="form-group">
 
@@ -14,13 +14,12 @@
   <%= f.text_field :description, :class => "form-control"  %>
 
   </fieldset>
-  <fieldset class="form-group">
 
-  <%= f.label :image, "Image url" %>
+<fieldset class="form-group">
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+</fieldset>
 
-  <%= f.url_field :image, :class => "form-control"  %>
-
-  </fieldset>
   <fieldset class="form-group">
 
   <%= f.label :category_ids, "Categories" %>
