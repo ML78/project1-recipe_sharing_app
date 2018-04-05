@@ -12,8 +12,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
+
+    @cloudinary = Cloudinary::Uploader.upload(params[:user][:image])
+    @user.update :image => @cloudinary['url']
+
     if @user.save
-      #redirect_to root_path
       redirect_to @user
     else
       render :new
