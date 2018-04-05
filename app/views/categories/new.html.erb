@@ -2,7 +2,7 @@
 
 <% if @category.errors.any? %>
   <ol>
-    <% @recipe.errors.full_messages.each do |msg| %>
+    <% @category.errors.full_messages.each do |msg| %>
       <li><%= msg.capitalize %></li>
     <% end %>
   </ol>

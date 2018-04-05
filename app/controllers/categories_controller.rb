@@ -14,8 +14,10 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new category_params
 
-    @cloudinary = Cloudinary::Uploader.upload(params[:category][:image])
-    @category.update :image => @cloudinary['url']
+    if @category.image?
+      @cloudinary = Cloudinary::Uploader.upload(params[:category][:image])
+      @category.update :image => @cloudinary['url']
+    end
 
     if @category.save
       redirect_to @category
