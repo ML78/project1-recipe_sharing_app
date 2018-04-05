@@ -15,6 +15,18 @@
   <% end %>
 </div>
 
+<div>
+  <h2>About <%= @ingredient.name %> </h2>
+
+  <img src="<%= @page.main_image_url %>" alt="<%= @ingredient.name%>" class="thumbnail">
+
+    <p><%= @page.summary %></p>
+    <br>
+    <p data-toggle="tooltip" data-placement="left" title="Find out more!">Source: <a href="<%=@page.fullurl%>" target="_blank"><%=@page.fullurl%></a></p>
+</div>
+
+<hr>
+
 <div class="controls">
   <% if @current_user.present? && @current_user.admin %>
     <%= link_to 'Edit ingredient', edit_ingredient_path(@ingredient) %>
@@ -24,14 +36,4 @@
 
 <div>
   [ <%= link_to 'Go back to ingredients listing', ingredients_path %> ]
-</div>
-
-<div>
-  <h2>About <%= @ingredient.name %> </h2>
-    <p><%= @page.summary %></p>
-    <br>
-
-<!-- <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" Find out more about this ingredient>Find out more about this ingredient</button> -->
-
-    <p data-toggle="tooltip" data-placement="left" title="Find out more!">Source: <a href="<%=@page.fullurl%>" target="_blank"><%=@page.fullurl%></a></p>
 </div>
