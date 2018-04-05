@@ -19,7 +19,11 @@
     <%= link_to 'Delete ingredient', @ingredient, :method => 'delete', :data => { :confirm => 'Are you sure you want to delete this ingredient?' } %>
   <% end %>
 </div>
-
 <div>
   [ <%= link_to 'Go back to ingredients listing', ingredients_path %> ]
 </div>
+
+<h2>About <%= @ingredient.name %> </h2>
+<p><%= @page.summary %></p>
+<br>
+<p>Source: <a href="<%=@page.fullurl%>" target="_blank"><%=@page.fullurl%></a></p>

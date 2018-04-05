@@ -22,6 +22,9 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.find(params[:id])
+
+    require 'wikipedia'
+    @page = Wikipedia.find(@ingredient.name)
   end
 
   def edit

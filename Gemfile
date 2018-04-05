@@ -36,6 +36,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 gem 'cloudinary'
 
+gem 'wikipedia-client'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
