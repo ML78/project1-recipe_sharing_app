@@ -7,4 +7,6 @@
     </ul>
 <% end %>
 
-    <p><%= link_to "Add an ingredient", new_ingredient_path %></p>
+<% if @current_user.present? %>
+    <p><%= link_to "Add a new ingredient", new_ingredient_path %></p>
+<% end %>
