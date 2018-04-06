@@ -5,7 +5,7 @@
   <% if @category.errors.any? %>
     <ol>
       <% @category.errors.full_messages.each do |msg| %>
-        <li><%= msg.capitalize %></li>
+        <li class="alert alert-danger" role="alert"><%= msg.capitalize %></li>
       <% end %>
     </ol>
   <% end %>
