@@ -7,7 +7,7 @@
   </fieldset>
   <fieldset class="form-group">
     <%= f.label :description, "Recipe description" %>
-    <%= f.text_field :description, :class => "form-control" %>
+    <%= f.text_area :description, :class => "form-control" %>
   </fieldset>
   <fieldset class="form-group">
     <%= f.label :image %><br>
@@ -27,9 +27,9 @@
     <% checkbox.label {checkbox.check_box + checkbox.text} %>
     <% end %>
   </fieldset>
-  <fieldset class="form-group">
+  <fieldset class="form-group" id="hidden">
     <%= f.label :user_id, "Posted by" %>
-    <%= f.select :user_id, User.pluck(:name, :id), :include_blank => true %>
+    <%= f.text_field :user_id, :value => session[:user_id] %>
   </fieldset>
   <fieldset class="form-group">
     <label></label>

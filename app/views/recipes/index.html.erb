@@ -5,5 +5,5 @@
 <% end %>
 
 <% if @current_user.present? %>
-  <p><%= link_to "Add a new recipe", new_recipe_path %></p>
+  <p><%= link_to "Add a new recipe", new_recipe_path, :class => 'btn btn-warning' %></p>
 <% end %>

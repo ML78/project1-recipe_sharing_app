@@ -5,5 +5,5 @@
 <% end %>
 
 <% if @current_user.present? && @current_user.admin %>
-  <p><%= link_to "Add a new category", new_category_path %></p>
+  <p><%= link_to "Add a new category", new_category_path, :class => 'btn btn-warning' %></p>
 <% end %>

@@ -8,5 +8,5 @@
 <% end %>
 
 <% if @current_user.present? %>
-  <p><%= link_to "Add a new ingredient", new_ingredient_path %></p>
+  <p><%= link_to "Add a new ingredient", new_ingredient_path, :class => 'btn btn-warning' %></p>
 <% end %>
