@@ -37,7 +37,13 @@ before_action :require_same_user, only: [:edit, :update, :destroy] #cannot delet
   def update
     recipe = Recipe.find(params[:id])
     recipe.update recipe_params
-    redirect_to recipe
+    if recipe.update(recipe_params)
+      if recipe.image?
+        cloudinary = Cloudinary::Uploader.upload(params[:recipe][:image])
+        recipe.update :image => cloudinary['url']
+      end
+      redirect_to recipe
+    end
   end
 
   def destroy

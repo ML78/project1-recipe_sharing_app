@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+  before_action :require_user, except:[:new, :create]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
     end
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render :new
@@ -36,7 +38,13 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.update user_params
-    redirect_to user
+    if user.update(user_params)
+      if user.image?
+        cloudinary = Cloudinary::Uploader.upload(params[:user][:image])
+        user.update :image => cloudinary['url']
+      end
+      redirect_to user
+    end
   end
 
   def destroy
